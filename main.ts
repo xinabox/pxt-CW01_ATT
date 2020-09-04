@@ -183,7 +183,13 @@ namespace cw01_att
         serial.writeString("AT+CIPSTART=0,\"TCP\",\"api.allthingstalk.io\",80" + cw01_vars.NEWLINE)
         basic.pause(1000)
         IoTMQTTConnect("api.allthingstalk.io", cw01_vars.TOKEN, "xinabox")
-        basic.showString(". . .")
+        basic.showLeds(`
+        . . . . .
+        . . . . .
+        # . # . #
+        . . . . .
+        . . . . .
+        `)
     }
 
 
