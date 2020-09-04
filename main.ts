@@ -181,9 +181,9 @@ namespace cw01_att
         serial.writeString("AT+CIPMUX=1" + cw01_vars.NEWLINE)
         basic.pause(100)
         serial.writeString("AT+CIPSTART=0,\"TCP\",\"api.allthingstalk.io\",80" + cw01_vars.NEWLINE)
-        basic.pause(500)
+        basic.pause(1000)
         IoTMQTTConnect("api.allthingstalk.io", cw01_vars.TOKEN, "xinabox")
-        basic.pause(500)
+        basic.showString(". . .")
     }
 
 
@@ -545,8 +545,6 @@ namespace cw01_att
 
                     let byte: number = 0
 
-                    basic.showString("pinged")
-
                     serial.writeString("AT+CIPRECVDATA=1,1" + cw01_vars.NEWLINE)
                     basic.pause(100)
 
@@ -563,15 +561,12 @@ namespace cw01_att
                             break
                         }
                     }
-                    
-                    basic.showString("Out!")
 
                     ctrl_pkt = (pins.unpackBuffer("!B", serial.readBuffer(1)))[0]
                     basic.showNumber(ctrl_pkt)
 
                     if (ctrl_pkt == 48) {
                         IoTMQTTGetData()
-                        basic.showString(cw01_mqtt_vars.new_payload)
                         handler(IoTATTGetValue(), IoTATTGetAssetName())
                     } else if (ctrl_pkt == 208) {
                         ctrl_pkt = 0
