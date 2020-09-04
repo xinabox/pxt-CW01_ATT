@@ -569,7 +569,6 @@ namespace cw01_att
                     }
 
                     ctrl_pkt = (pins.unpackBuffer("!B", serial.readBuffer(1)))[0]
-                    basic.showNumber(ctrl_pkt)
 
                     if (ctrl_pkt == 48) {
                         IoTMQTTGetData()
