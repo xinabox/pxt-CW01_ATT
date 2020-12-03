@@ -3,7 +3,7 @@
     "version": "0.0.10",
     "dependencies": {
         "core": "*",
-        "radio": "*"
+        "microphone": "*"
     },
     "files": [
         "main.blocks",
@@ -16,5 +16,8 @@
     "supportedTargets": [
         "microbit"
     ],
-    "preferredEditor": "tsprj"
+    "preferredEditor": "tsprj",
+    "disablesVariants": [
+        "mbcodal"
+    ]
 }
