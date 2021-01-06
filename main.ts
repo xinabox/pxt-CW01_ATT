@@ -781,7 +781,7 @@ namespace cw01_att
         cw01_vars.mqtt_message = serial.readString()
 
         cw01_mqtt_vars.new_topic = cw01_vars.mqtt_message.substr(cw01_vars.mqtt_message.indexOf(":") + 1, topic_len)
-        cw01_mqtt_vars.new_payload = cw01_vars.mqtt_message.substr(cw01_vars.mqtt_message.indexOf(":") + 1 + cw01_mqtt_vars.new_topic.length, cw01_vars.mqtt_message.length - (cw01_vars.mqtt_message.indexOf(":") + cw01_mqtt_vars.new_topic.length + 6))
+        cw01_mqtt_vars.new_payload = cw01_vars.mqtt_message.substr(cw01_vars.mqtt_message.indexOf(":") + 1 + cw01_mqtt_vars.new_topic.length, cw01_vars.mqtt_message.length - (cw01_vars.mqtt_message.indexOf(":") + cw01_mqtt_vars.new_topic.length + 7))
 
         cw01_mqtt_vars.receiving_msg = false
     }
