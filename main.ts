@@ -67,7 +67,7 @@ namespace cw01_att
     let cw01_button_object = new button_class()
     let cw01_vars = new cw01_int_var123()
     let cw01_mqtt_vars = new cw01_mqtt()
-    let en_Feedback: boolean = true
+    let en_Feedback: boolean = false
     let en_doubleLink: boolean = false
         let cmd_rcvd_count: number = 0
 
@@ -144,7 +144,7 @@ namespace cw01_att
 
         if (cw01_vars.res.includes("WIFI CONNECTED")) {
             basic.showString("C")
-            basic.pause(2000)
+            basic.pause(5000)
             basic.showString("")
             cw01_vars.res = ""
         }
@@ -152,7 +152,7 @@ namespace cw01_att
         if(loop_count == 20)
         {
             basic.showString("D")
-            basic.pause(2000)
+            basic.pause(5000)
             basic.showString("")
         }
     }
