@@ -16,8 +16,5 @@
     "supportedTargets": [
         "microbit"
     ],
-    "preferredEditor": "tsprj",
-    "disablesVariants": [
-        "mbcodal"
-    ]
+    "preferredEditor": "tsprj"
 }
